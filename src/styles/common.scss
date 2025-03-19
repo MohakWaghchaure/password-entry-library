@@ -1,34 +1,123 @@
-.body-wrapper{
-    .card-container{
-        .header-wrapper{
-            h1{
+$color1: #FF725E;
+$color2: #FFFFFF;
+$color3: #263238;
+$color4: #E0E0E0;
+$color5: #000000;
+$color6: #9c9c9c;
 
-            }
-            p{
+.body-wrapper {
+    color: $color3;
 
-            }
-        }
-        .form-wrapper{
-            .input-wrapper{
-                position: relative;
-                label{
-                    position: absolute;
-                    height: 100%;
-                    width: 100%;
-                    padding-left: 10px;
-                    display: flex;
-                    align-items: center;
+    .main-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .card-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 400px;
+
+            .card {
+                width: 100%;
+                .header-wrapper {
+                    padding-bottom: 20px;
+                    text-align: center;
+
+                    h1 {
+                        margin: 0px;
+                        color: $color1;
+                        padding-bottom: 5px;
+                        font-size: 25px;
+                    }
+
+                    p {
+                        margin: 0px;
+                        color: $color6;
+                    }
                 }
-                input{
-                    padding: 10px;
-                    height: 100%;
+
+                .form-wrapper {
                     width: 100%;
 
+                    .input-wrapper {
+                        position: relative;
+                        align-items: center;
+                        border-radius: 5px;
+                        padding-bottom: 20px;
+
+                        label {
+                            height: 100%;
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            z-index: -10;
+                            top: 0;
+                            padding-bottom: 5px;
+                            font-weight: 600;
+                        }
+
+                        input {
+                            padding: 10px 10px;
+                            width: 100%;
+                            border: 1px solid #ccc;
+                            border-radius: 5px;
+                            font-size: 20px;
+                            background: transparent;
+                            box-sizing: border-box;
+                        }
+                    }
+
+                    .password-strength {
+                        padding: 10px 0px;
+                        font-weight: 600;
+                    }
+
+                    .checklist-wrapper {
+                        color: $color6;
+                    }
+
+                    .buttons-wrapper {
+                        width: 100%;
+                        padding: 20px 0px;
+
+                        .button {
+                            width: 100%;
+                            padding: 10px;
+                            border-radius: 5px;
+                            font-size: 15px;
+                            font-weight: 600;
+                            margin-bottom: 20px;
+                            transition: 0.2s;
+                            cursor: pointer;
+
+                            &.btn-submit {
+                                border: 1px solid $color1;
+                                background-color: $color1;
+                                color: $color4;
+                            }
+
+                            &.btn-reset {
+                                border: 1px solid $color4;
+                                background-color: $color4;
+                                color: $color1;
+                            }
+
+                            &:hover {
+                                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                            }
+                        }
+                    }
                 }
             }
-        }
-    }
-    .background-container{
 
+
+        }
+
+        .background-container {
+            padding: 10px 10px;
+        }
     }
 }

@@ -1,4 +1,4 @@
-$color1: #FF725E;
+$color1: #27374D;
 $color2: #FFFFFF;
 $color3: #263238;
 $color4: #E0E0E0;
@@ -148,10 +148,17 @@ $color6: #9c9c9c;
                                 &.checked{
                                     background-color: $color1;
                                     border: 1px solid $color4;
+                                    background-image: url(../images/icons/check.png);
+                                    background-position: center;
+                                    background-repeat: no-repeat;
+                                    background-size: contain;
                                 }
                             }
                             .text{
                                 padding-left: 10px;
+                                &.active{
+                                    color: $color1;
+                                }
                             }
                         }
                     }
@@ -189,6 +196,7 @@ $color6: #9c9c9c;
                     }
                     .error-container{
                         text-align: center;
+                        color: #b34020;
                     }
                 }
             }

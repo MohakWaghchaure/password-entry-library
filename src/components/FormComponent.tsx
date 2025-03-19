@@ -89,7 +89,7 @@ const FormComponent = () => {
                             {conditions.map((cond, index) => (
                                 <div key={index} className="condition">
                                     <div className={`check ${cond.check ? 'checked' : ''}`}></div>
-                                    <div className="text">{cond.text}</div>
+                                    <div className={`text ${cond.check ? 'active' : ''}`}>{cond.text}</div>
                                 </div>
                             ))}
                         </div>
@@ -99,7 +99,6 @@ const FormComponent = () => {
                         </div>
                         <div className='error-container'>
                             <div>{error}</div>
-                            <div></div>
                         </div>
                     </form>
                 </div>

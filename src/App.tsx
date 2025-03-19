@@ -1,24 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap-grid';
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App body-wrapper">
+      <div className='container'>
+        <div className='row'>
+          <div className='col-6'>
+            <div className='card-container'>
+              <div className='header-wrapper'>
+                <h1>Create a Strong Password</h1>
+                <p>Follow the rules below to secure your account</p>
+              </div>
+              <div className='form-wrapper'>
+                <form>
+                  <div className='input-wrapper'>
+                    <label>Password</label>
+                    <input type="password"></input>
+                  </div>
+                  <div className='input-wrapper'>
+                    <label>Confirm Password</label>
+                    <input type="password"></input>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div className='col-6'>
+            <div className='background-container'></div>
+          </div>
+        </div>
+        
+      </div>
     </div>
   );
 }

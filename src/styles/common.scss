@@ -68,20 +68,97 @@ $color6: #9c9c9c;
                             background: transparent;
                             box-sizing: border-box;
                         }
+
+                        .toggle-visibility-btn{
+                            position: absolute;
+                            right: 4%;
+                            top: 42%;
+                            height: 22px;
+                            width: 22px;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            border: none;
+                            background-color: transparent;
+                            &.show{
+                                background-image: url(../images/icons/visible.png);
+                            }
+                            &.hide{
+                                background-image: url(../images/icons/hidden.png);
+                            }
+                        }
                     }
 
                     .password-strength {
                         padding: 10px 0px;
                         font-weight: 600;
+                        display: flex;
+                        align-items: center;
+                        .text{
+                            padding-right: 20px;
+                        }
+                        .score{
+                            border: 1px solid $color1;
+                            border-radius: 5px;
+                            width: 200px;
+                            height: 15px;
+                            position: relative;
+                            .scale{
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                height: 100%;
+                                width: 0%;
+                                background-color: $color1;
+                                transition: 0.5s;
+                                &.scale-1{
+                                    width: 20%;
+                                }
+                                &.scale-2{
+                                    width: 40%;
+                                }
+                                &.scale-3{
+                                    width: 60%;
+                                }
+                                &.scale-4{
+                                    width: 80%;
+                                }
+                                &.scale-5{
+                                    width: 100%;
+                                }
+                            }
+                        }
+
                     }
 
                     .checklist-wrapper {
                         color: $color6;
+                        padding-bottom: 10px;
+                        .condition{
+                            display: flex;
+                            align-items: center;
+                            justify-content: start;
+                            padding: 4px 0px;
+                            .check{
+                                background-color: $color4;
+                                height: 15px;
+                                width: 15px;
+                                border-radius: 5px;
+                                border: 1px solid $color4;
+                                &.checked{
+                                    background-color: $color1;
+                                    border: 1px solid $color4;
+                                }
+                            }
+                            .text{
+                                padding-left: 10px;
+                            }
+                        }
                     }
 
                     .buttons-wrapper {
                         width: 100%;
-                        padding: 20px 0px;
+                        padding: 10px 0px;
 
                         .button {
                             width: 100%;
@@ -89,7 +166,7 @@ $color6: #9c9c9c;
                             border-radius: 5px;
                             font-size: 15px;
                             font-weight: 600;
-                            margin-bottom: 20px;
+                            margin-bottom: 10px;
                             transition: 0.2s;
                             cursor: pointer;
 
@@ -109,6 +186,9 @@ $color6: #9c9c9c;
                                 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
                             }
                         }
+                    }
+                    .error-container{
+                        text-align: center;
                     }
                 }
             }

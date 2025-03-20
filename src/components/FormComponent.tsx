@@ -1,12 +1,17 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import errorIcon from '../images/icons/error.png';
 
+interface FormComponentProps {
+    setOverlay: React.Dispatch<React.SetStateAction<boolean>>; // Typing the setOverlay function
+    setCopyPassword: React.Dispatch<React.SetStateAction<string>>; // Typing the setCopyPassword function
+}
+
 interface Condition {
     text: string;
     check: boolean;
 }
 
-const FormComponent = () => {
+const FormComponent: React.FC<FormComponentProps> = ({ setOverlay, setCopyPassword }) => {
     const [password, setPassword] = useState<string>('');
     const [confirmPassword, setConfirmPassword] = useState<string>('');
     const [error, setError] = useState<string>('');
@@ -31,17 +36,19 @@ const FormComponent = () => {
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (password !== confirmPassword) {
-            setError('Passwords do not match.');
-            return;
-        }
         if (conditions.some((cond) => !cond.check)) {
             setError('Password does not meet all conditions.');
             return;
         }
-        setError('');
-        alert('Password successfully set!');
-
+        else if (password !== confirmPassword){
+            setError('Passwords do not match.');
+            return;
+        }
+        else{
+            setError('');
+            setCopyPassword(password);
+            setOverlay(true);
+        }
     };
 
     const handleReset = () => {

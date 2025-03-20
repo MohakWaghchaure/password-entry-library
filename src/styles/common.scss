@@ -4,10 +4,11 @@ $color3: #9DB2BF;
 $color4: #DDE6ED;
 $color5: #000000;
 $color6: #FF735C;
+$color7: #FFFFFF;
 
 .body-wrapper {
     color: $color1;
-    position: relative;
+    position: relative;    
 
     .overly-screen{
         position: absolute;
@@ -118,7 +119,7 @@ $color6: #FF735C;
                             border: 1px solid $color3;
                             border-radius: 5px;
                             font-size: 20px;
-                            background: transparent;
+                            background: $color7;
                             box-sizing: border-box;
                         }
 

@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+import errorIcon from '../images/icons/error.png';
 
 interface Condition {
     text: string;
@@ -94,12 +95,13 @@ const FormComponent = () => {
                             ))}
                         </div>
                         <div className='buttons-wrapper'>
-                            <button className='button btn-submit' type='submit' disabled={conditions.some((c) => !c.check)}>Submit</button>
+                            <button className='button btn-submit' type='submit'>Submit</button>
                             <button className='button btn-reset' type='reset' onClick={handleReset}>Reset</button>
                         </div>
-                        <div className='error-container'>
-                            <div>{error}</div>
-                        </div>
+                        {error && <div className='error-container'>
+                            <img src={errorIcon} alt={'error'} width={15} height={15} />
+                            <div className="message">{error}</div>
+                        </div>}
                     </form>
                 </div>
             </div>

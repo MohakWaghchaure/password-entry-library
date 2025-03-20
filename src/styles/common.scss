@@ -1,12 +1,12 @@
 $color1: #27374D;
-$color2: #FFFFFF;
-$color3: #263238;
-$color4: #E0E0E0;
+$color2: #526D82;
+$color3: #9DB2BF;
+$color4: #DDE6ED;
 $color5: #000000;
-$color6: #9c9c9c;
+$color6: #FF735C;
 
 .body-wrapper {
-    color: $color3;
+    color: $color1;
 
     .main-wrapper {
         display: flex;
@@ -23,19 +23,19 @@ $color6: #9c9c9c;
             .card {
                 width: 100%;
                 .header-wrapper {
-                    padding-bottom: 20px;
+                    padding-bottom: 35px;
                     text-align: center;
 
                     h1 {
                         margin: 0px;
-                        color: $color1;
+                        color: $color6;
                         padding-bottom: 5px;
                         font-size: 25px;
                     }
 
                     p {
                         margin: 0px;
-                        color: $color6;
+                        color: $color1;
                     }
                 }
 
@@ -57,12 +57,13 @@ $color6: #9c9c9c;
                             top: 0;
                             padding-bottom: 5px;
                             font-weight: 600;
+                            color: $color1;
                         }
 
                         input {
                             padding: 10px 10px;
                             width: 100%;
-                            border: 1px solid #ccc;
+                            border: 1px solid $color3;
                             border-radius: 5px;
                             font-size: 20px;
                             background: transparent;
@@ -80,6 +81,9 @@ $color6: #9c9c9c;
                             background-size: contain;
                             border: none;
                             background-color: transparent;
+                            transition: 0.2s;
+                            opacity: 0.5;
+                            cursor: pointer;
                             &.show{
                                 background-image: url(../images/icons/visible.png);
                             }
@@ -98,7 +102,7 @@ $color6: #9c9c9c;
                             padding-right: 20px;
                         }
                         .score{
-                            border: 1px solid $color1;
+                            border: 2px solid $color6;
                             border-radius: 5px;
                             width: 200px;
                             height: 15px;
@@ -109,7 +113,7 @@ $color6: #9c9c9c;
                                 left: 0;
                                 height: 100%;
                                 width: 0%;
-                                background-color: $color1;
+                                background-color: $color6;
                                 transition: 0.5s;
                                 &.scale-1{
                                     width: 20%;
@@ -156,8 +160,11 @@ $color6: #9c9c9c;
                             }
                             .text{
                                 padding-left: 10px;
+                                color: $color2;
+                                font-weight: 400;
                                 &.active{
                                     color: $color1;
+                                    font-weight: 500;
                                 }
                             }
                         }
@@ -195,8 +202,14 @@ $color6: #9c9c9c;
                         }
                     }
                     .error-container{
-                        text-align: center;
-                        color: #b34020;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        .message{
+                            padding-left: 5px;
+                            color: $color6;
+                            font-weight: 500;
+                        }
                     }
                 }
             }
